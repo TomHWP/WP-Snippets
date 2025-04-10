@@ -1,6 +1,5 @@
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteCond %{REQUEST_URI} ^/xmlrpc.php$
-RewriteCond %{REMOTE_ADDR} !^37\.97\.209\.113$
-RewriteRule ^(.*)$ - [F,L]
-</IfModule>
+<Files xmlrpc.php>
+Order deny,allow
+Deny from all
+Allow from 37.97.209.113
+</Files>
